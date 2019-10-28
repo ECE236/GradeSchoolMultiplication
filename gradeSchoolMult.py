@@ -36,7 +36,11 @@ def gradeSchoolMult(x, y):
             z += carry
             #convert to string for easier manipulation
             z = str(z)   
-            carry = int(z[0])
+            #carry
+            if(int(z)>9):
+                carry = int(z[0])
+            else:
+                carry = 0
             #adding digit to partial mult
             partial = z[-1] + partial
         #taking care of leftover carry
@@ -44,10 +48,7 @@ def gradeSchoolMult(x, y):
             partial = str(carry) + partial
         #adding partial multiplication to final sum
         sumPartial += int(partial)
-return sumPartial
+    return sumPartial
 
 
 print(gradeSchoolMult(1234,5678))
-    
-            
-
